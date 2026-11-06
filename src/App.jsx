@@ -8,14 +8,14 @@ export default function App()
       <br/><br/><br/><br/><br/>       {/* Temporary code to split so we can focus on what matters */}
 
       <main>
-        <div>
+        <div className="ai-interviewer">
           <h2>AI Mock Interviewer</h2>
           {/* Adding div for the Job Title + input bar so we can style it later */}
           <div>
             <label>Job Title: </label>
             <input type="text" placeholder="Enter your job title here"/>
           </div>  
-          <div>
+          <div className="transcript">
             Box for transcript
             {/* Box for transcript */}
           </div>
