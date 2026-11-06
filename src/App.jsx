@@ -2,10 +2,15 @@ export default function App()
 {
   return (
     <>
-      <header>
-        <h4>Placeholder Header</h4>
-      </header>
-      <br/><br/><br/><br/><br/>       {/* Temporary code to split so we can focus on what matters */}
+      {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
+      <navbar>         {/* Same as turners */}
+        <h4>Cars | Trucks & Machinery | Damaged & End of Life | Motorcycles | General Goods |Buses, Caravans & Motorhomes | Boats & Marine</h4>
+      </navbar>
+      <br/><br/><br/><br/><br/>
+      {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
+
+
+
 
       <main>
         <div className="ai-interviewer">
@@ -27,10 +32,18 @@ export default function App()
       </main>
 
 
-      <br/><br/><br/><br/><br/>      {/* Temporary code to split so we can focus on what matters */}
+
+
+
+
+
+
+      {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
+      <br/><br/><br/><br/><br/>      
       <footer>
         <h4>Placeholder Footer</h4>
       </footer>
+      {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
     </>
   )
 }

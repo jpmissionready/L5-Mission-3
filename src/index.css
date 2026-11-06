@@ -33,3 +33,26 @@ button
 {
   width: 15%;
 }
+
+
+
+
+
+
+
+/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
+navbar
+{
+  text-align: center;
+
+}
+footer 
+{  
+  background-color: #B2E4FA;
+  color: #707070;
+  width: 100%;
+  padding: 2% 10% 2% 10%;
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+}
