@@ -5,3 +5,54 @@
   margin: 0;
   padding: 0;
 }
+
+
+.ai-interviewer
+{
+  width: 30%;
+  margin: 0 auto;
+}
+.transcript
+{
+  border: 2px solid black;
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+}
+label
+{
+
+  width: 15%;
+}
+input
+{
+  width:85%;
+  padding:10px;
+}
+button
+{
+  width: 15%;
+}
+
+
+
+
+
+
+
+/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
+navbar
+{
+  text-align: center;
+
+}
+footer 
+{  
+  background-color: #B2E4FA;
+  color: #707070;
+  width: 100%;
+  padding: 2% 10% 2% 10%;
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+}
