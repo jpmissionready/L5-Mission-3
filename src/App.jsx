@@ -1,5 +1,17 @@
 import { useState } from "react";
 
+// From Turners
+import iconShieldedLogo from "./assets/shielded.co.nz.png";
+// import iconBranchDetails from "";
+// import iconFacebook from "";
+// import iconNewsletter from "";
+// import iconEmailAlerts from "";
+// import iconInstagram from "";
+
+
+
+
+
 export default function App() {
   const [jobTitle, setJobTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -84,23 +96,7 @@ export default function App() {
         <a href="#">Newsletter</a>
         <a href="#">Email Alerts</a>
         <a href="#">Instagram</a>
-
-      {/* Code from https://shielded.co.nz/ plain HTML wont work, make it work for react */}
-      {/* <a href="#" id="shielded-logo">
-          <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60"></a>
-      <script src="https://staticcdn.co.nz/embed/embed.js"></script>
-      <script>
-          (function () {
-              window.onload = function(){
-                  var frameName = new ds07o6pcmkorn({
-                      openElementId: "#shielded-logo",
-                      modalID: "modal",
-                  });
-                  frameName.init();
-              }
-          })();
-      </script> */}
-
+        <img src={iconShieldedLogo} alt="shielded nz"></img>
       </footer>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
     </>

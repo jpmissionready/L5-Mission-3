@@ -50,12 +50,13 @@ footer {
   position: fixed;
   bottom: 0;
   text-align: right;
+  padding: 0 20%;
 }
 footer p 
 {
   float: left;  
   color: lightgrey;
-  line-height: 45px;
+  line-height: 35px;
 }
 footer a
 {
@@ -64,4 +65,9 @@ footer a
   text-decoration: none;
   color: white;
   border-left: 1px solid white;
+}
+footer img
+{
+  height: 35px;
+  vertical-align: middle;
 }
