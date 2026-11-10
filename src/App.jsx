@@ -3,7 +3,6 @@ export default function App() {
     <>
       {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
       <navbar>
-        {" "}
         {/* Same as turners */}
         <h4>
           Cars | Trucks & Machinery | Damaged & End of Life | Motorcycles |
