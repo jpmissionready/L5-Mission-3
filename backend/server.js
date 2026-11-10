@@ -1,6 +1,10 @@
 import express from "express";
+import {GoogleGenAI} from "@google/genai";
+// Talk to Gemini
 
 const app = express();
+const genai = new GoogleGenAI({apiKey: process.env.API_KEY_GEMINI});
+
 
 app.use(express.json());
 
