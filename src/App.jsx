@@ -6,6 +6,7 @@ import iconBranchDetails from "./assets/branch.svg";
 import iconFacebook from "./assets/facebook.svg";
 import iconMail from "./assets/mail.svg";
 import iconInstagram from "./assets/instagram.svg";
+import turnersLogoHeader from "./assets/turners-logo.jpg";
 
 
 
@@ -47,6 +48,14 @@ export default function App() {
       <br />
       <br />
       <br />
+      <header>
+          <img src={turnersLogoHeader} alt="Turners Logo" />
+          <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">LOGIN</a>
+          <span> OR </span>
+          <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">REGISTER</a>
+          <span className="phoneNumber">0800 887 637</span>
+          <a className="findUs"href="https://www.turners.co.nz/Company/Branches/" target="_blank">Find Us</a>
+      </header>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
 
       <main>

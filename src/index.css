@@ -33,7 +33,9 @@ button {
   border-radius: 5px;
 }
 
+
 /* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
+
 navbar {
   text-align: center;
 }
@@ -56,11 +58,49 @@ navbar a:last-child
   background-color: lightgrey;
   border-top: 3px solid #0073cf; 
 }
-
 navbar h4
 {
   font-weight: normal;
 }
+header
+{
+  padding: 10px 20%;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+header img
+{
+  float: left;
+  height: 55px;
+}
+header a
+{
+  color: #0073cf;
+  text-decoration: none;
+  line-height: 55px;
+}
+header span
+{
+  color: grey;
+  font-style: italic;
+  font-weight: normal;
+}
+header .phoneNumber
+{
+  color: black;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 25px;
+}
+header .findUs
+{
+  color: black;
+  margin-left: 25px;
+}
+
+
+
 
 footer {
   background-color: #333333;
