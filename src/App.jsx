@@ -12,7 +12,7 @@ export default function App() {
   function handleTitleChange(e) {
     setJobTitle(e.target.value);
   }
-  function handleMessageChange() {
+  function handleMessageChange(e) {
     setMessage(e.target.value);
   }
 
