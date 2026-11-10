@@ -27,7 +27,11 @@ export default function App() {
           <form onSubmit={handleSubmit}>
             <div>
               <label>Job Title: </label>
-              <input type="text" placeholder="Enter your job title here" />
+              <input
+                type="text"
+                placeholder="Enter your job title here"
+                required
+              />
             </div>
             <div className="transcript">
               Box for transcript
