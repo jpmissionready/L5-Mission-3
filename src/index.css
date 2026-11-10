@@ -1,54 +1,44 @@
-*
-{
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+* {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-
-.ai-interviewer
-{
+.ai-interviewer {
   width: 30%;
   margin: 0 auto;
 }
-.transcript
-{
+.transcript {
   border: 2px solid black;
   width: 100%;
   height: 300px;
   padding: 20px;
 }
-label
-{
-
+label {
   width: 15%;
 }
-input
-{
-  width:85%;
-  padding:10px;
+input {
+  width: 85%;
+  padding: 10px;
 }
-button
-{
+button {
   width: 15%;
+  height: 35px;
+  padding: 5px;
+  color: white;
+  font-size: 16px;
+  background-color: #0073cf;
+  border: none;
+  border-radius: 5px;
 }
-
-
-
-
-
-
 
 /* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
-navbar
-{
+navbar {
   text-align: center;
-
 }
-footer 
-{  
-  background-color: #B2E4FA;
+footer {
+  background-color: #b2e4fa;
   color: #707070;
   width: 100%;
   padding: 2% 10% 2% 10%;
