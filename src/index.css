@@ -40,10 +40,28 @@ navbar {
 navbar a
 {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   text-decoration: none;
-
+  font-size: 16px;
+  color: #0073cf;     /* taken from turners site */
+  border-left: 1px solid lightgrey;
 }
+navbar a:first-child
+{
+  border-left: none;
+}
+navbar a:last-child
+{
+  color: black;
+  background-color: lightgrey;
+  border-top: 3px solid #0073cf; 
+}
+
+navbar h4
+{
+  font-weight: normal;
+}
+
 footer {
   background-color: #333333;
   width: 100%;
@@ -76,4 +94,10 @@ footer img
   height: 35px;
   vertical-align: middle;
   margin-left: 15px;
+}
+footer a img
+{
+  height: 25px;
+  margin-left: 0px;
+  margin-right: 8px;
 }

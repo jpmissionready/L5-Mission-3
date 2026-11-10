@@ -90,6 +90,7 @@ export default function App() {
       <br />
       <footer>
         {/* Footer Icons taken from https://fontawesome.com/ as we can't seem to download them directly from turners website.*/}
+        {/* Need to figure out how to turn the icons red. */}
         <p>(C) 2026 Turners Auctions. All Rights Reserved.</p>
         <a href="https://www.turners.co.nz/Company/Branches/" target="_blank">
           <img src={iconBranchDetails} alt="House icon"></img>
