@@ -69,10 +69,17 @@ header
   font-size: 14px;
   font-weight: bold;
 }
-header img
+header .headerLogo
 {
   float: left;
   height: 55px;
+}
+header .HeaderIcons
+{
+  height: 16px;
+  margin-right 5px;
+  vertical-align: -2px;
+  opacity: 0.6;
 }
 header a
 {

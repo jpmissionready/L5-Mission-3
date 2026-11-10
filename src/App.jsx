@@ -55,19 +55,19 @@ export default function App() {
       <br />
       <br />
       <header>
-          <img src={turnersLogoHeader} alt="Turners Logo" />
+          <img src={turnersLogoHeader} alt="Turners Logo" className="headerLogo" />
           <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">
-            <img src={userIcon} alt="User Icon"></img>
+            <img src={userIcon} alt="User Icon" className="HeaderIcons"></img>
             LOGIN
           </a>
           <span> OR </span>
           <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">REGISTER</a>
           <span className="phoneNumber">
-            <img src={phoneIcon} alt="Phone Icon"></img>
+            <img src={phoneIcon} alt="Phone Icon" className="HeaderIcons"></img>
             0800 887 637
           </span>
           <a className="findUs"href="https://www.turners.co.nz/Company/Branches/" target="_blank">
-            <img src={locationIcon} alt="Location Icon"></img>
+            <img src={locationIcon} alt="Location Icon" className="HeaderIcons"></img>
             Find Us
           </a>
       </header>
