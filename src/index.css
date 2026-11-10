@@ -45,7 +45,7 @@ navbar a
 
 }
 footer {
-  background-color: darkgrey;
+  background-color: #333333;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -56,18 +56,24 @@ footer p
 {
   float: left;  
   color: lightgrey;
-  line-height: 35px;
+  font-size 10px;
+  line-height: 55px;
 }
 footer a
 {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 20px;
   text-decoration: none;
   color: white;
-  border-left: 1px solid white;
+  border-left: 1px solid #444444;
+}
+footer a:last-of-type
+{
+  border-right: 1px solid #444444;
 }
 footer img
 {
   height: 35px;
   vertical-align: middle;
+  margin-left: 15px;
 }

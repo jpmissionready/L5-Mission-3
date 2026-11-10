@@ -2,11 +2,10 @@ import { useState } from "react";
 
 // From Turners
 import iconShieldedLogo from "./assets/shielded.co.nz.png";
-// import iconBranchDetails from "";
-// import iconFacebook from "";
-// import iconNewsletter from "";
-// import iconEmailAlerts from "";
-// import iconInstagram from "";
+import iconBranchDetails from "./assets/branch.svg";
+import iconFacebook from "./assets/facebook.svg";
+import iconMail from "./assets/mail.svg";
+import iconInstagram from "./assets/instagram.svg";
 
 
 
@@ -90,12 +89,28 @@ export default function App() {
       <br />
       <br />
       <footer>
+        {/* Footer Icons taken from https://fontawesome.com/ as we can't seem to download them directly from turners website.*/}
         <p>(C) 2026 Turners Auctions. All Rights Reserved.</p>
-        <a href="https://www.turners.co.nz/Company/Branches/" target="_blank">Branch Details</a>
-        <a href="http://www.facebook.com/turnersNZ" target="_blank">Facebook</a>
-        <a href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/" target="_blank">Newsletter</a>
-        <a href="https://www.turners.co.nz/Company/email-alerts/email-alerts/" target="_blank">Email Alerts</a>
-        <a href="https://www.instagram.com/turners_cars" target="_blank">Instagram</a>
+        <a href="https://www.turners.co.nz/Company/Branches/" target="_blank">
+          <img src={iconBranchDetails} alt="House icon"></img>
+          Branch Details
+        </a>
+        <a href="http://www.facebook.com/turnersNZ" target="_blank">
+          <img src={iconFacebook} alt="Facebook icon"></img>
+          Facebook
+        </a>
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/" target="_blank">
+          <img src={iconMail} alt="Newsletter icon"></img>
+          Newsletter
+        </a>
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-alerts/" target="_blank">
+          <img src={iconMail} alt="Email icon"></img>
+          Email Alerts
+        </a>
+        <a href="https://www.instagram.com/turners_cars" target="_blank">
+          <img src={iconInstagram} alt="Instagram icon"></img>
+          Instagram
+        </a>
         <img src={iconShieldedLogo} alt="Women's Refuge Shield"></img>
       </footer>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
