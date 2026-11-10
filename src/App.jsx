@@ -7,6 +7,12 @@ import iconFacebook from "./assets/facebook.svg";
 import iconMail from "./assets/mail.svg";
 import iconInstagram from "./assets/instagram.svg";
 import turnersLogoHeader from "./assets/turners-logo.jpg";
+import userIcon from "./assets/user.svg";
+import phoneIcon from "./assets/phone.svg";
+import locationIcon from "./assets/location.svg";
+
+
+
 
 
 
@@ -50,11 +56,20 @@ export default function App() {
       <br />
       <header>
           <img src={turnersLogoHeader} alt="Turners Logo" />
-          <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">LOGIN</a>
+          <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">
+            <img src={userIcon} alt="User Icon"></img>
+            LOGIN
+          </a>
           <span> OR </span>
           <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">REGISTER</a>
-          <span className="phoneNumber">0800 887 637</span>
-          <a className="findUs"href="https://www.turners.co.nz/Company/Branches/" target="_blank">Find Us</a>
+          <span className="phoneNumber">
+            <img src={phoneIcon} alt="Phone Icon"></img>
+            0800 887 637
+          </span>
+          <a className="findUs"href="https://www.turners.co.nz/Company/Branches/" target="_blank">
+            <img src={locationIcon} alt="Location Icon"></img>
+            Find Us
+          </a>
       </header>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
 
