@@ -1,4 +1,8 @@
 export default function App() {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <>
       {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
@@ -20,7 +24,7 @@ export default function App() {
         <div className="ai-interviewer">
           <h2>AI Mock Interviewer</h2>
           {/* Adding div for the Job Title + input bar so we can style it later */}
-          <form>
+          <form onSubmit={handleSubmit}>
             <div>
               <label>Job Title: </label>
               <input type="text" placeholder="Enter your job title here" />
