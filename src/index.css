@@ -37,6 +37,13 @@ button {
 navbar {
   text-align: center;
 }
+navbar a
+{
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+
+}
 footer {
   background-color: #b2e4fa;
   color: #707070;

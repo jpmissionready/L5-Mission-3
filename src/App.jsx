@@ -22,8 +22,13 @@ export default function App() {
       <navbar>
         {/* Same as turners */}
         <h4>
-          Cars | Trucks & Machinery | Damaged & End of Life | Motorcycles |
-          General Goods |Buses, Caravans & Motorhomes | Boats & Marine
+          <a href="#">Cars </a>
+          <a href="#">Trucks & Machinery </a>
+          <a href="#">Damaged & End of Life </a>
+          <a href="#">Motorcycles </a>
+          <a href="#">Buses, Caravans & Motorhomes </a>
+          <a href="#">Boats & Marine </a>
+          <a href="#">AI Interviewer </a>
         </h4>
       </navbar>
       <br />
