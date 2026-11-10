@@ -45,11 +45,23 @@ navbar a
 
 }
 footer {
-  background-color: #b2e4fa;
-  color: #707070;
+  background-color: darkgrey;
   width: 100%;
-  padding: 2% 10% 2% 10%;
   position: fixed;
   bottom: 0;
   text-align: right;
+}
+footer p 
+{
+  float: left;  
+  color: lightgrey;
+  line-height: 45px;
+}
+footer a
+{
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-left: 1px solid white;
 }

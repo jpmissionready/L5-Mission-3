@@ -22,13 +22,13 @@ export default function App() {
       <navbar>
         {/* Same as turners */}
         <h4>
-          <a href="#">Cars </a>
-          <a href="#">Trucks & Machinery </a>
-          <a href="#">Damaged & End of Life </a>
-          <a href="#">Motorcycles </a>
-          <a href="#">Buses, Caravans & Motorhomes </a>
-          <a href="#">Boats & Marine </a>
-          <a href="#">AI Interviewer </a>
+          <a href="#">Cars</a>
+          <a href="#">Trucks & Machinery</a>
+          <a href="#">Damaged & End of Life</a>
+          <a href="#">Motorcycles</a>
+          <a href="#">Buses, Caravans & Motorhomes</a>
+          <a href="#">Boats & Marine</a>
+          <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
       <br />
@@ -78,7 +78,29 @@ export default function App() {
       <br />
       <br />
       <footer>
-        <h4>Placeholder Footer</h4>
+        <p>(C) 2026 Turners Auctions. All Rights Reserved.</p>
+        <a href="#">Branch Details</a>
+        <a href="#">Facebook</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Email Alerts</a>
+        <a href="#">Instagram</a>
+
+      {/* Code from https://shielded.co.nz/ plain HTML wont work, make it work for react */}
+      {/* <a href="#" id="shielded-logo">
+          <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60"></a>
+      <script src="https://staticcdn.co.nz/embed/embed.js"></script>
+      <script>
+          (function () {
+              window.onload = function(){
+                  var frameName = new ds07o6pcmkorn({
+                      openElementId: "#shielded-logo",
+                      modalID: "modal",
+                  });
+                  frameName.init();
+              }
+          })();
+      </script> */}
+
       </footer>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
     </>
