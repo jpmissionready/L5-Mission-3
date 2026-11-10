@@ -34,12 +34,12 @@ export default function App() {
       <navbar>
         {/* Same as turners */}
         <h4>
-          <a href="#">Cars</a>
-          <a href="#">Trucks & Machinery</a>
-          <a href="#">Damaged & End of Life</a>
-          <a href="#">Motorcycles</a>
-          <a href="#">Buses, Caravans & Motorhomes</a>
-          <a href="#">Boats & Marine</a>
+          <a href="https://www.turners.co.nz/?activetab=carsearch" target="_blank">Cars</a>
+          <a href="https://www.turners.co.nz/Trucks-Machinery/?" target="_blank">Trucks & Machinery</a>
+          <a href="https://www.turners.co.nz/Damaged-Vehicles/?" target="_blank">Damaged & End of Life</a>
+          <a href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1" target="_blank">Motorcycles</a>
+          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank">Buses, Caravans & Motorhomes</a>
+          <a href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1" target="_blank">Boats & Marine</a>
           <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
@@ -91,12 +91,12 @@ export default function App() {
       <br />
       <footer>
         <p>(C) 2026 Turners Auctions. All Rights Reserved.</p>
-        <a href="#">Branch Details</a>
-        <a href="#">Facebook</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Email Alerts</a>
-        <a href="#">Instagram</a>
-        <img src={iconShieldedLogo} alt="shielded nz"></img>
+        <a href="https://www.turners.co.nz/Company/Branches/" target="_blank">Branch Details</a>
+        <a href="http://www.facebook.com/turnersNZ" target="_blank">Facebook</a>
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/" target="_blank">Newsletter</a>
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-alerts/" target="_blank">Email Alerts</a>
+        <a href="https://www.instagram.com/turners_cars" target="_blank">Instagram</a>
+        <img src={iconShieldedLogo} alt="Women's Refuge Shield"></img>
       </footer>
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
     </>
