@@ -1,6 +1,12 @@
+import { useState } from "react";
+
 export default function App() {
+  const [jobTitle, setJobTitle] = useState("");
+  const [message, setMessage] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
+    // Need to send the form info to the gemini api here
   }
 
   return (
