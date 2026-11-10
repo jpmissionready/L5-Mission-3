@@ -9,6 +9,13 @@ export default function App() {
     // Need to send the form info to the gemini api here
   }
 
+  function handleTitleChange(e) {
+    setJobTitle(e.target.value);
+  }
+  function handleMessageChange() {
+    setMessage(e.target.value);
+  }
+
   return (
     <>
       {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
@@ -36,6 +43,7 @@ export default function App() {
               <input
                 type="text"
                 placeholder="Enter your job title here"
+                onChange={handleTitleChange}
                 required
               />
             </div>
@@ -49,6 +57,7 @@ export default function App() {
                 rows={3}
                 cols={80}
                 placeholder="Talk to the Super Intelligence here"
+                onChange={handleMessageChange}
                 required
               />
               <button type="submit">Submit</button>
