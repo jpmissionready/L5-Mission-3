@@ -49,11 +49,6 @@ export default function App() {
           <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <header>
           <img src={turnersLogoHeader} alt="Turners Logo" className="headerLogo" />
           <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">
@@ -71,6 +66,11 @@ export default function App() {
             Find Us
           </a>
       </header>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
 
       <main>
