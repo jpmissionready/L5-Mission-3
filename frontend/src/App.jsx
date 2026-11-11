@@ -24,14 +24,18 @@ export default function App() {
   ]);
 
   function handleSubmit(e) {
-    const sender = "Me";
     e.preventDefault();
     // Add message to conversation
+    const sender = "Me";
     appendToConversation(sender, message);
     // Send the form info to the gemini api
     createPost();
+
+    // Clear text field so user can enter next question
+    //
   }
 
+  // Helper function to add messages to conversation array
   function appendToConversation(sender, text) {
     setConversation((prev) => [
       ...prev,
@@ -57,6 +61,7 @@ export default function App() {
       const data = await response.json();
       // turn data into an object and store in conversation useState
       const sender = "Interviewer";
+      // TODO
       // parse the response into text?
       const text = "";
       appendToConversation(sender, text);
