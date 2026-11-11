@@ -72,11 +72,17 @@ export default function App() {
         </h4>
       </navbar>
       <header>
-        <img
-          src={turnersLogoHeader}
-          alt="Turners Logo"
-          className="headerLogo"
-        />
+        <a
+          href="https://www.turners.co.nz/?activetab=carsearch"
+          target="_blank"
+        >
+          {" "}
+          <img
+            src={turnersLogoHeader}
+            alt="Turners Logo"
+            className="headerLogo"
+          />
+        </a>
         <a
           href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/"
           target="_blank"

@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
 }
-/*  */
 .ai-interviewer {
   width: 30%;
   margin: 0 auto;
@@ -32,6 +31,18 @@ button {
   border: none;
   border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
@@ -104,10 +115,6 @@ header .findUs
   color: black;
   margin-left: 25px;
 }
-
-
-
-
 footer {
   background-color: #333333;
   width: 100%;
