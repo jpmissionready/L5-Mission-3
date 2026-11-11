@@ -20,7 +20,7 @@ export default function App() {
   const [jobTitle, setJobTitle] = useState("");
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([
-    { sender: "Interviewer", message: "Tell me about yourself." },
+    { id: 0, sender: "Interviewer", message: "Tell me about yourself." },
   ]);
 
   function handleSubmit(e) {
@@ -172,8 +172,12 @@ export default function App() {
               />
             </div>
             <div className="transcript">
-              Box for transcript
               {/* Box for transcript */}
+              {conversation.map((msg) => (
+                <p key={msg.id}>
+                  {msg.sender}: {msg.message}
+                </p>
+              ))}
             </div>
             <div>
               <textarea
