@@ -13,6 +13,9 @@ import userIcon from "./assets/user.svg";
 import phoneIcon from "./assets/phone.svg";
 import locationIcon from "./assets/location.svg";
 
+// Placeholder content
+import placeholderContent from "./assets/Placeholder.png";
+
 export default function App() {
   const [jobTitle, setJobTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -157,6 +160,7 @@ export default function App() {
       <br />
       <br />
       <br />
+      <img src={placeholderContent} className="placeholder-content"></img>
       <footer>
         {/* Footer Icons taken from https://fontawesome.com/ as we can't seem to download them directly from turners website.*/}
         {/* Need to figure out how to turn the icons red. */}

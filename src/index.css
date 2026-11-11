@@ -43,8 +43,6 @@ button {
 
 
 
-
-
 /* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
 
 navbar {
@@ -153,4 +151,12 @@ footer a img
   height: 25px;
   margin-left: 0px;
   margin-right: 8px;
+}
+
+.placeholder-content
+{
+  position: fixed;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
 }
