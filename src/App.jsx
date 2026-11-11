@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // From Turners
 import iconShieldedLogo from "./assets/shielded.co.nz.png";
-import turnersLogoHeader from "./assets/turners-logo.jpg";
+import turnersLogoHeader from "./assets/turners-logo.png";
 
 // From https://fontawesome.com/search?q=account&ic=free-collection
 import iconBranchDetails from "./assets/branch.svg";
