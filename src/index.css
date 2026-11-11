@@ -43,7 +43,8 @@ button {
 
 
 
-/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */
+/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */
+/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */
 
 navbar {
   text-align: center;
@@ -128,8 +129,6 @@ header .findUs
   color: white;
   font-weight: bold;
 }
-
-
 footer {
   background-color: #333333;
   width: 100%;
@@ -169,7 +168,6 @@ footer a img
   margin-left: 0px;
   margin-right: 8px;
 }
-
 .placeholder-content
 {
   position: fixed;
