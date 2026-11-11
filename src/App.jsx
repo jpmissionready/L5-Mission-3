@@ -114,12 +114,30 @@ export default function App() {
           Find Us
         </a>
       </header>
+      <nav className="menubar">
+          <div>
+            <span>Find a Car</span>
+            <span>How to Buy</span>
+            <span>Spell your car</span>
+            <span>Finance & Insurance</span>
+            <span>Mobile Servicing</span>
+          </div>
+          <div>
+            <span>Auctions</span>
+            <span>More Info</span>
+          </div>
+      </nav>
       <br />
       <br />
       <br />
       <br />
       <br />
       {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
+
+
+
+
+
 
       <main>
         <div className="ai-interviewer">
@@ -153,6 +171,11 @@ export default function App() {
           </form>
         </div>
       </main>
+
+
+
+
+
 
       {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
       <br />

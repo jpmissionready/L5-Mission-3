@@ -113,6 +113,23 @@ header .findUs
   color: black;
   margin-left: 25px;
 }
+.menubar
+{
+  margin-top: 0.7%;
+  background-color: #0073cf;
+  padding: 0 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.menubar span
+{
+  display: inline-block;
+  padding: 14px 16px;
+  color: white;
+  font-weight: bold;
+}
+
+
 footer {
   background-color: #333333;
   width: 100%;
