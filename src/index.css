@@ -49,7 +49,7 @@ button {
 navbar {
   text-align: center;
 }
-navbar a
+navbar > h4 > a
 {
   display: inline-block;
   padding: 10px 10px;
@@ -58,16 +58,16 @@ navbar a
   color: #0073cf;     /* taken from turners site */
   border-left: 1px solid lightgrey;
 }
-navbar a:first-child
+navbar > h4 > a:first-child
 {
   border-left: none;
 }
-navbar a:last-child
+navbar > h4 > a:last-child
 {
   color: black;
   border-top: 3px solid #0073cf; 
 }
-navbar h4
+navbar > h4
 {
   font-weight: normal;
 }
@@ -90,26 +90,26 @@ header .HeaderIcons
   vertical-align: -2px;
   opacity: 0.6;
 }
-header a
+header > a
 {
   color: #0073cf;
   text-decoration: none;
   line-height: 55px;
 }
-header span
+header > span
 {
   color: grey;
   font-style: italic;
   font-weight: normal;
 }
-header .phoneNumber
+header >.phoneNumber
 {
   color: black;
   font-style: normal;
   font-weight: bold;
   margin-left: 25px;
 }
-header .findUs
+header > .findUs
 {
   color: black;
   margin-left: 25px;
@@ -122,7 +122,7 @@ header .findUs
   display: flex;
   justify-content: space-between;
 }
-.menubar span
+.menubar > div > span
 {
   display: inline-block;
   padding: 14px 16px;
@@ -137,14 +137,14 @@ footer {
   text-align: right;
   padding: 0 20%;
 }
-footer p 
+footer > p 
 {
   float: left;  
   color: lightgrey;
   font-size: 10px;
   line-height: 55px;
 }
-footer a
+footer > a
 {
   display: inline-block;
   padding: 15px 20px;
@@ -152,17 +152,17 @@ footer a
   color: white;
   border-left: 1px solid #444444;
 }
-footer a:last-of-type
+footer > a:last-of-type
 {
   border-right: 1px solid #444444;
 }
-footer img
+footer > img
 {
   height: 35px;
   vertical-align: middle;
   margin-left: 15px;
 }
-footer a img
+footer > a > img
 {
   height: 25px;
   margin-left: 0px;
