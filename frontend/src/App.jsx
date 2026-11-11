@@ -28,7 +28,7 @@ export default function App() {
     e.preventDefault();
     // Add message to conversation
     appendToConversation(sender, message);
-    // Need to send the form info to the gemini api here
+    // Send the form info to the gemini api
     createPost();
   }
 
