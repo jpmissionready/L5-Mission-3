@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.send("Backend running");
 });
 
-app.post("api/interview", (req, res) => {
+app.post("/api/interview", (req, res) => {
   const data = req.body;
   // data should have a jobtitle and a message
 
