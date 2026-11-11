@@ -193,7 +193,7 @@ export default function App() {
               {/* Box for transcript */}
               {conversation.map((msg) => (
                 <p key={msg.id}>
-                  {msg.sender}: {msg.message}
+                  {msg.sender}: {msg.text}
                 </p>
               ))}
             </div>
