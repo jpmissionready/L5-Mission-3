@@ -49,7 +49,7 @@ export default function App() {
         </h4>
       </navbar>
       <header>
-        <a href="#" target="_blank"> {" "}
+        <a href="#" target="_blank">
           <img src={turnersLogoHeader} alt="Turners Logo" className="headerLogo" />
         </a>
         <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank">
@@ -138,7 +138,7 @@ export default function App() {
 
 
 
-      
+
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       <br />
