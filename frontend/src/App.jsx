@@ -32,7 +32,7 @@ export default function App() {
     createPost();
 
     // Clear text field so user can enter next question
-    //
+    setMessage("");
   }
 
   // Helper function to add messages to conversation array
@@ -206,6 +206,7 @@ export default function App() {
                 rows={3}
                 cols={80}
                 placeholder="Talk to the Super Intelligence here"
+                value={message}
                 onChange={handleMessageChange}
                 required
               />
