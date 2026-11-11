@@ -166,6 +166,7 @@ footer > a > img
 {
   height: 25px;
   margin-left: 0px;
+  vertical-align: middle;
   margin-right: 8px;
 }
 .placeholder-content
