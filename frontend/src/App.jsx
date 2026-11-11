@@ -20,14 +20,23 @@ export default function App() {
   const [jobTitle, setJobTitle] = useState("");
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([
-    { id: 0, sender: "Interviewer", message: "Tell me about yourself." },
+    { id: 0, sender: "Interviewer", text: "Tell me about yourself." },
   ]);
 
   function handleSubmit(e) {
+    const sender = "Me";
     e.preventDefault();
     // Add message to conversation
+    appendToConversation(sender, message);
     // Need to send the form info to the gemini api here
     createPost();
+  }
+
+  function appendToConversation(sender, text) {
+    setConversation((prev) => [
+      ...prev,
+      { id: prev.length, sender: sender, text: text },
+    ]);
   }
 
   async function createPost() {
@@ -47,6 +56,10 @@ export default function App() {
 
       const data = await response.json();
       // turn data into an object and store in conversation useState
+      const sender = "Interviewer";
+      // parse the response into text?
+      const text = "";
+      appendToConversation(sender, text);
     } catch (error) {}
   }
 
