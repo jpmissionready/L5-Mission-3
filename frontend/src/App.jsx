@@ -50,7 +50,7 @@ export default function App() {
     };
 
     try {
-      const response = await fetch("http://localhost/4000/api/interview", {
+      const response = await fetch("http://localhost:4000/api/interview", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
