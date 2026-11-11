@@ -73,7 +73,7 @@ export default function App() {
       </navbar>
       <header>
         <a
-          href="https://www.turners.co.nz/?activetab=carsearch"
+          href="#"
           target="_blank"
         >
           {" "}
