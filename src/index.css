@@ -55,7 +55,6 @@ navbar a:first-child
 navbar a:last-child
 {
   color: black;
-  background-color: lightgrey;
   border-top: 3px solid #0073cf; 
 }
 navbar h4
