@@ -65,7 +65,10 @@ export default function App() {
       // parse the response into text?
       const text = "";
       appendToConversation(sender, text);
-    } catch (error) {}
+    } catch (error) 
+    {
+      console.error(error);
+    }
   }
 
   function handleTitleChange(e) {
