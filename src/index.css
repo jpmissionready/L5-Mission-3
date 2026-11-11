@@ -85,7 +85,7 @@ header .headerLogo
 header .HeaderIcons
 {
   height: 16px;
-  margin-right 5px;
+  margin-right: 5px;
   vertical-align: -2px;
   opacity: 0.6;
 }
