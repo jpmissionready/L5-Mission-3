@@ -34,7 +34,8 @@ export default function App() {
 
   return (
     <>
-      {/* VVV ========== VVV Irrelevant to the mission VVV ========== VVV */}
+      {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
+      {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       <navbar>
         {/* Same as turners */}
         <h4>
@@ -92,6 +93,10 @@ export default function App() {
 
 
 
+
+
+
+
       <main>
         <div className="ai-interviewer">
           <h2>AI Mock Interviewer</h2>
@@ -129,6 +134,11 @@ export default function App() {
 
 
 
+
+
+
+
+      
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       <br />
@@ -163,7 +173,8 @@ export default function App() {
         </a>
         <img src={iconShieldedLogo} alt="Women's Refuge Shield"></img>
       </footer>
-      {/* ^^^ ========== ^^^ Irrelevant to the mission ^^^ ========== ^^^ */}
+      {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
+      {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
     </>
   );
 }
