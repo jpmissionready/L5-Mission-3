@@ -5,11 +5,12 @@ import { GoogleGenAI } from "@google/genai";
 
 const app = express();
 const genai = new GoogleGenAI({ apiKey: process.env.API_KEY_GEMINI });
+const input = "How does AI work?";
 
 async function main() {
   const interaction = await genai.interactions.create({
     model: "gemini-3.8-flash",
-    input: "How does AI work?",
+    input: input,
     system_instruction: "Max reply length 5 sentences",
   });
   console.log(interaction.output_text);
