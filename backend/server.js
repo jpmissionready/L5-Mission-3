@@ -24,6 +24,16 @@ app.get("/", (req, res) => {
   res.send("Backend running");
 });
 
+app.post("api/interview", (req, res) => {
+  const data = req.body;
+  // data should have a jobtitle and a message
+
+  // create an interaction with genai api
+
+  // Send response back
+  res.status(200).json({});
+});
+
 app.use((err, req, res, next) => {
   res.status(400).json({ error: "there is an error" });
 });
