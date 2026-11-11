@@ -19,9 +19,13 @@ import placeholderContent from "./assets/Placeholder.png";
 export default function App() {
   const [jobTitle, setJobTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [conversation, setConversation] = useState([
+    { sender: "Interviewer", message: "Tell me about yourself." },
+  ]);
 
   function handleSubmit(e) {
     e.preventDefault();
+    // Add message to conversation
     // Need to send the form info to the gemini api here
     createPost();
   }
@@ -42,7 +46,7 @@ export default function App() {
       });
 
       const data = await response.json();
-      // display data
+      // turn data into an object and store in conversation useState
     } catch (error) {}
   }
 
