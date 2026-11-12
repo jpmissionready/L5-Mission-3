@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // From Turners
 import iconShieldedLogo from "./assets/shielded.co.nz.png";
@@ -22,18 +22,15 @@ export default function App() {
   const [conversation, setConversation] = useState([
     { id: 0, sender: "Interviewer", text: "Tell me about yourself." },
   ]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [finished, setFinished] = useState(false);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // Add message to conversation
-    const sender = "Me";
-    appendToConversation(sender, message);
-    // Send the form info to the gemini api
-    createPost();
-
-    // Clear text field so user can enter next question
-    setMessage("");
-  }
+  // Scroll the transcript to the newest message
+  const transcriptRef = useRef(null);
+  useEffect(() => {
+    transcriptRef.current.scrollTop = transcriptRef.current.scrollHeight;
+  }, [conversation, loading]);
 
   // Helper function to add messages to conversation array
   function appendToConversation(sender, text) {
@@ -43,31 +40,53 @@ export default function App() {
     ]);
   }
 
-  async function createPost() {
-    const input = {
-      jobTitle: jobTitle,
-      message: message,
-    };
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const answer = message.trim();
+    if (!answer) return;
+
+    // The full chat INCLUDING the new answer.
+    // (State updates are not instant, so we build the list here.)
+    const updatedConversation = [
+      ...conversation,
+      { id: conversation.length, sender: "Me", text: answer },
+    ];
+
+    // The server wants roles "interviewer" / "candidate" and a "text" field
+    const messages = updatedConversation.map((msg) => ({
+      role: msg.sender === "Interviewer" ? "interviewer" : "candidate",
+      text: msg.text,
+    }));
+
+    setConversation(updatedConversation);
+    setMessage(""); // clear the textbox
+    setError("");
+    setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:4000/api/interview", {
+      const response = await fetch("/api/interview", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(input),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ jobTitle: jobTitle.trim(), messages }),
       });
 
-      const data = await response.json();
-      // turn data into an object and store in conversation useState
-      const sender = "Interviewer";
-      // TODO
-      // parse the response into text?
-      const text = "";
-      appendToConversation(sender, text);
-    } catch (error) 
-    {
-      console.error(error);
+      // If the server is down the body is empty, so .json() would crash
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(
+          data.error || "The server is not responding. Is the backend running?",
+        );
+      }
+
+      appendToConversation("Interviewer", data.reply);
+      setFinished(data.finished);
+    } catch (err) {
+      // Undo: go back to the chat before this answer and put the text back
+      setConversation(conversation);
+      setMessage(answer);
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -186,31 +205,42 @@ export default function App() {
             <div>
               <label>Job Title: </label>
               <input
+                id="job-title"
                 type="text"
                 placeholder="Enter your job title here"
+                value={jobTitle}
                 onChange={handleTitleChange}
+                disabled={conversation.length > 1}
                 required
               />
             </div>
-            <div className="transcript">
-              {/* Box for transcript */}
+            <div className="transcript" ref={transcriptRef}>
               {conversation.map((msg) => (
-                <p key={msg.id}>
-                  {msg.sender}: {msg.text}
+                <p key={msg.id} className={msg.sender === "Me" ? "me" : ""}>
+                  <strong>{msg.sender}: </strong>
+                  {msg.text}
                 </p>
               ))}
+              {loading && <p className="thinking">Interviewer is typing...</p>}
             </div>
+            {error && <p className="error">{error}</p>}
+            {finished && (
+              <p>Interview finished. Click "Start again" to practise again.</p>
+            )}
+
             <div>
               <textarea
-                type="text"
                 rows={3}
                 cols={80}
                 placeholder="Talk to the Super Intelligence here"
                 value={message}
                 onChange={handleMessageChange}
+                disabled={finished || loading}
                 required
               />
-              <button type="submit">Submit</button>
+              <button type="submit" disabled={finished || loading}>
+                Submit
+              </button>
             </div>
           </form>
         </div>
