@@ -1,9 +1,9 @@
 import "dotenv/config.js";
 import express from "express";
-import cors from "cors";
 import { GoogleGenAI } from "@google/genai";
-import { buildQuestionPrompt } from "./prompts.js";
+import { buildFeedbackPrompt, buildQuestionPrompt } from "./prompts.js";
 
+// Set the maximum number of interview questions before giving final feedback
 const Total_Questions = 7;
 const Model = process.env.GEMINI_MODEL;
 
@@ -11,9 +11,6 @@ const Model = process.env.GEMINI_MODEL;
 const app = express();
 const genai = new GoogleGenAI({ apiKey: process.env.API_KEY_GEMINI });
 
-// await main();
-// Commented out above as can't node server.js otherwise to test
-app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -21,34 +18,38 @@ app.get("/", (req, res) => {
 });
 
 /**
- * Validates the chat history sent by the frontend to prevent malformed data or tampering.
+ * Validates the structure, length, and turn-taking order of the chat history.
+ * Expects alternating turns starting with "interviewer" and ending with "candidate".
  */
 function chatIsValid(messages) {
   // Ensure messages is a valid array
   if (!Array.isArray(messages)) return false;
-
+  // Must have at least 1 Q&A pair (2 messages) and an even total (candidate just answered)
   if (messages.length < 2 || messages.length % 2 !== 0) return false;
+  // Prevent conversations from exceeding the maximum allowed Q&A pairs
   if (messages.length > Total_Questions * 2) return false;
 
   // m is (message)
-  // Check every single message object in the array
+  // Check every message object in the array
   return messages.every((m, index) => {
-    // Even indexes (0, 2, 4...) must be the "interviewer"; odd indexes (1, 3, 5...) must be the "candidate"
+    // Even indices (0, 2, 4...) must be the interviewer; odd indices (1, 3, 5...) must be the candidate
     const expectedRole = index % 2 == 0 ? "interviewer" : "candidate";
     return (
       m &&
-      m.role === expectedRole && // Role matches the alternating turn order
-      typeof m.text === "string" && // Message content is a string
-      m.text.trim() !== "" && // Message is not blank/whitespace
-      m.text.length <= 2000 // Prevents overly long inputs
+      m.role === expectedRole &&
+      typeof m.text === "string" &&
+      m.text.trim() !== "" && // Message cannot be blank
+      m.text.length <= 2000 // Enforce a 2,000-character limit per message
     );
   });
 }
 
-// Validate that jobTitle is a non-empty string under 50 characters
+// Main API endpoint to handle ongoing mock interview turns
 app.post("/api/interview", async (req, res) => {
+  // Extract jobTitle and messages safely from the request body
   const { jobTitle, messages } = req.body ?? {};
 
+  // Validate that jobTitle is a non-empty string of 50 characters or fewer
   if (
     typeof jobTitle !== "string" ||
     jobTitle.trim() === "" ||
@@ -56,34 +57,26 @@ app.post("/api/interview", async (req, res) => {
   ) {
     return res.status(400).json({ error: "Please enter a job title." });
   }
-  // Validate the structure and rules of the conversation history
+
+  // Validate the chat history format using the helper function
   if (!chatIsValid(messages)) {
     return res.status(400).json({ error: "Invalid conversation" });
   }
-  // Remove leading/trailing whitespace from the job title
+  // Clean up leading/trailing whitespace from the job title
   const title = jobTitle.trim();
 
+  // Count how many questions the AI interviewer has asked so far
   const questionsAsked = messages.filter(
     (m) => m.role === "interviewer",
   ).length;
+  // Check if the candidate has just answered the final question
 
-  // If the interview has reached the 7-question limit, end the session immediately
-  if (questionsAsked >= Total_Questions) {
-    return res.json({
-      reply: "Thank you for completing the interview",
-      finished: true,
-    });
-  }
+  const isLastAnswer = questionsAsked >= Total_Questions;
 
-  // Calculate the number of the upcoming question
-  const questionNumber = questionsAsked + 1;
-
-  // Generate the system rules/persona for Gemini based on the job title and current question count
-  const systemInstruction = buildQuestionPrompt(
-    title,
-    questionNumber,
-    Total_Questions,
-  );
+  // Choose the AI's persona/instructions: give final feedback if done, otherwise ask the next question
+  const systemInstruction = isLastAnswer
+    ? buildFeedbackPrompt(title)
+    : buildQuestionPrompt(title, questionsAsked + 1, Total_Questions);
 
   // Format the conversation history for the Gemini API.
   // Gemini requires conversations to start with a "user" role message, so we seed it with an initial prompt.
@@ -95,7 +88,8 @@ app.post("/api/interview", async (req, res) => {
       ],
     },
   ];
-  // Map your app's roles ("interviewer" / "candidate") to Gemini's expected roles ("model" / "user")
+
+  // Map our app's roles ("interviewer"/"candidate") to Gemini's expected roles ("model"/"user")
   for (const m of messages) {
     contents.push({
       role: m.role === "interviewer" ? "model" : "user",
@@ -110,23 +104,20 @@ app.post("/api/interview", async (req, res) => {
       contents,
       config: { systemInstruction },
     });
-    // Guard against the API returning an empty response
+    // Guard against empty responses from the API
     if (!response.text) {
       throw new Error("Empty reply from Gemini");
     }
-    // Send the generated question back to the frontend, flagging if this was the final question
-    res.json({
-      reply: response.text.trim(),
-      finished: questionNumber === Total_Questions,
-    });
+    // Return the AI's response and indicate whether the interview has concluded
+    res.json({ reply: response.text.trim(), finished: isLastAnswer });
   } catch (err) {
-    // Log the detailed error on the server for debugging
+    // Log the error for debugging purposes
     console.error("Gemini error:", err);
-    // Handle API rate-limiting specifically with a 429 status code
+    // Handle API rate-limiting specifically with HTTP 429
     if (err.status === 429) {
       return res.status(429).json({ error: "Too many requests." });
     }
-    // Return a generic 500 error message for any other API failure
+    // Return a generic 500 error for all other API failures
     res.status(500).json({ error: "The AI interviewer could not reply." });
   }
 });
