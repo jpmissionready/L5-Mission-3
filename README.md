@@ -10,7 +10,7 @@ Built with React + Vite (frontend), Express (backend) and the Google Gemini API.
 
 ```
 API_KEY_GEMINI=your_key_here
-GEMINI_MODEL=gemini-3.8-flash (or your preffered model)
+GEMINI_MODEL=gemini-3.8-flash (or your preferred model)
 ```
 
 2. Start the backend:
