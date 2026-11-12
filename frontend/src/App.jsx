@@ -39,7 +39,13 @@ export default function App() {
       { id: prev.length, sender: sender, text: text },
     ]);
   }
-
+  function startOver ()
+  {
+    setConversation([{ id: 0, sender: "Interviewer", text: "Tell me about yourself." },])
+    setMessage("");
+    setError("");
+    setFinished(false);
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     const answer = message.trim();
@@ -191,9 +197,8 @@ export default function App() {
                 disabled={finished || loading}
                 required
               />
-              <button type="submit" disabled={finished || loading}>
-                Submit
-              </button>
+              <button type="submit" disabled={finished || loading}> Submit </button>
+              <button type="button" onClick={startOver} disabled={loading}> Start Again </button>
             </div>
           </form>
         </div>
