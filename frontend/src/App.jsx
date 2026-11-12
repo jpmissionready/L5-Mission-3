@@ -137,6 +137,39 @@ export default function App() {
           >
             Boats & Marine
           </a>
+          <a
+            href="https://www.turners.co.nz/?activetab=carsearch"
+            target="_blank"
+          >
+            Cars
+          </a>
+          <a
+            href="https://www.turners.co.nz/Trucks-Machinery/?"
+            target="_blank"
+          >
+            Trucks & Machinery
+          </a>
+          <a
+            href="https://www.turners.co.nz/Damaged-Vehicles/?"
+            target="_blank"
+          >
+            Damaged & End of Life
+          </a>
+          <a
+            href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1"
+            target="_blank"
+          >
+            Motorcycles
+          </a>
+          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank">
+            Buses, Caravans & Motorhomes
+          </a>
+          <a
+            href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1"
+            target="_blank"
+          >
+            Boats & Marine
+          </a>
           <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
@@ -147,7 +180,16 @@ export default function App() {
             alt="Turners Logo"
             className="headerLogo"
           />
+          <img
+            src={turnersLogoHeader}
+            alt="Turners Logo"
+            className="headerLogo"
+          />
         </a>
+        <a
+          href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/"
+          target="_blank"
+        >
         <a
           href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/"
           target="_blank"
@@ -156,6 +198,9 @@ export default function App() {
           LOGIN
         </a>
         <span> OR </span>
+        <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">
+          REGISTER
+        </a>
         <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">
           REGISTER
         </a>
@@ -173,10 +218,31 @@ export default function App() {
             alt="Location Icon"
             className="HeaderIcons"
           ></img>
+        <a
+          className="findUs"
+          href="https://www.turners.co.nz/Company/Branches/"
+          target="_blank"
+        >
+          <img
+            src={locationIcon}
+            alt="Location Icon"
+            className="HeaderIcons"
+          ></img>
           Find Us
         </a>
       </header>
       <nav className="menubar">
+        <div>
+          <span>Find a Car</span>
+          <span>How to Buy</span>
+          <span>Spell your car</span>
+          <span>Finance & Insurance</span>
+          <span>Mobile Servicing</span>
+        </div>
+        <div>
+          <span>Auctions</span>
+          <span>More Info</span>
+        </div>
         <div>
           <span>Find a Car</span>
           <span>How to Buy</span>
@@ -234,6 +300,7 @@ export default function App() {
                 cols={80}
                 placeholder="Talk to the Super Intelligence here"
                 value={message}
+                value={message}
                 onChange={handleMessageChange}
                 disabled={finished || loading}
                 required
@@ -270,9 +337,17 @@ export default function App() {
           href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/"
           target="_blank"
         >
+        <a
+          href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/"
+          target="_blank"
+        >
           <img src={iconMail} alt="Newsletter icon"></img>
           Newsletter
         </a>
+        <a
+          href="https://www.turners.co.nz/Company/email-alerts/email-alerts/"
+          target="_blank"
+        >
         <a
           href="https://www.turners.co.nz/Company/email-alerts/email-alerts/"
           target="_blank"

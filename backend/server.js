@@ -1,5 +1,6 @@
 import "dotenv/config.js";
 import express from "express";
+import cors from "cors";
 import { GoogleGenAI } from "@google/genai";
 import { buildFeedbackPrompt, buildQuestionPrompt } from "./prompts.js";
 
@@ -10,6 +11,9 @@ const Model = process.env.GEMINI_MODEL;
 const app = express();
 const genai = new GoogleGenAI({ apiKey: process.env.API_KEY_GEMINI });
 
+// await main();
+// Commented out above as can't node server.js otherwise to test
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
