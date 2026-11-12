@@ -32,7 +32,7 @@ export default function App() {
     createPost();
 
     // Clear text field so user can enter next question
-    //
+    setMessage("");
   }
 
   // Helper function to add messages to conversation array
@@ -50,7 +50,7 @@ export default function App() {
     };
 
     try {
-      const response = await fetch("http://localhost/4000/api/interview", {
+      const response = await fetch("http://localhost:4000/api/interview", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,10 @@ export default function App() {
       // parse the response into text?
       const text = "";
       appendToConversation(sender, text);
-    } catch (error) {}
+    } catch (error) 
+    {
+      console.error(error);
+    }
   }
 
   function handleTitleChange(e) {
@@ -193,7 +196,7 @@ export default function App() {
               {/* Box for transcript */}
               {conversation.map((msg) => (
                 <p key={msg.id}>
-                  {msg.sender}: {msg.message}
+                  {msg.sender}: {msg.text}
                 </p>
               ))}
             </div>
@@ -203,6 +206,7 @@ export default function App() {
                 rows={3}
                 cols={80}
                 placeholder="Talk to the Super Intelligence here"
+                value={message}
                 onChange={handleMessageChange}
                 required
               />
