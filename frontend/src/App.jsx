@@ -104,76 +104,29 @@ export default function App() {
       <navbar>
         {/* Same as turners */}
         <h4>
-          <a
-            href="https://www.turners.co.nz/?activetab=carsearch"
-            target="_blank"
-          >
-            Cars
-          </a>
-          <a
-            href="https://www.turners.co.nz/Trucks-Machinery/?"
-            target="_blank"
-          >
-            Trucks & Machinery
-          </a>
-          <a
-            href="https://www.turners.co.nz/Damaged-Vehicles/?"
-            target="_blank"
-          >
-            Damaged & End of Life
-          </a>
-          <a
-            href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1"
-            target="_blank"
-          >
-            Motorcycles
-          </a>
-          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank">
-            Buses, Caravans & Motorhomes
-          </a>
-          <a
-            href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1"
-            target="_blank"
-          >
-            Boats & Marine
-          </a>
+          <a href="https://www.turners.co.nz/?activetab=carsearch" target="_blank" > Cars </a>
+          <a href="https://www.turners.co.nz/Trucks-Machinery/?" target="_blank" > Trucks & Machinery </a>
+          <a href="https://www.turners.co.nz/Damaged-Vehicles/?" target="_blank" > Damaged & End of Life </a>
+          <a href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1" target="_blank" > Motorcycles </a>
+          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank"> Buses, Caravans & Motorhomes </a>
+          <a href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1" target="_blank" > Boats & Marine </a>
           <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
       <header>
         <a href="#" target="_blank">
-          <img
-            src={turnersLogoHeader}
-            alt="Turners Logo"
-            className="headerLogo"
-          />
+          <img src={turnersLogoHeader} alt="Turners Logo" className="headerLogo" />
         </a>
-        <a
-          href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/"
-          target="_blank"
-        >
-          <img src={userIcon} alt="User Icon" className="HeaderIcons"></img>
-          LOGIN
-        </a>
+        <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank" >
+          <img src={userIcon} alt="User Icon" className="HeaderIcons"></img> LOGIN </a>
         <span> OR </span>
-        <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">
-          REGISTER
-        </a>
+        <a href="https://www.turners.co.nz/Login/Registration/" target="_blank"> REGISTER </a>
         <span className="phoneNumber">
           <img src={phoneIcon} alt="Phone Icon" className="HeaderIcons"></img>
           0800 887 637
         </span>
-        <a
-          className="findUs"
-          href="https://www.turners.co.nz/Company/Branches/"
-          target="_blank"
-        >
-          <img
-            src={locationIcon}
-            alt="Location Icon"
-            className="HeaderIcons"
-          ></img>
-          Find Us
+        <a className="findUs" href="https://www.turners.co.nz/Company/Branches/" target="_blank" >
+          <img src={locationIcon} alt="Location Icon" className="HeaderIcons" ></img> Find Us 
         </a>
       </header>
       <nav className="menubar">
@@ -266,17 +219,11 @@ export default function App() {
           <img src={iconFacebook} alt="Facebook icon"></img>
           Facebook
         </a>
-        <a
-          href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/"
-          target="_blank"
-        >
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/" target="_blank" >
           <img src={iconMail} alt="Newsletter icon"></img>
           Newsletter
         </a>
-        <a
-          href="https://www.turners.co.nz/Company/email-alerts/email-alerts/"
-          target="_blank"
-        >
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-alerts/" target="_blank" >
           <img src={iconMail} alt="Email icon"></img>
           Email Alerts
         </a>
