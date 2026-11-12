@@ -36,7 +36,37 @@ button:disabled {
   background-color: #9ca3af;
   cursor: not-allowed;
 }
-label {
+
+.jobTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.jobTitle input {
+  flex: 1;
+  padding: 10px;
+}
+
+.inputField {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.inputField textarea {
+  flex: 1;
+  padding: 10px;
+}
+button {
+  padding: 0 20px;
+  color: white;
+  font-size: 16px;
+  background-color: #0073cf;
+  border: none;
+  border-radius: 5px;
+}
+
+/* label {
   width: 15%;
 }
 input {
@@ -52,7 +82,7 @@ button {
   background-color: #0073cf;
   border: none;
   border-radius: 5px;
-}
+} */
 
 /* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */
 /* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */
@@ -163,7 +193,7 @@ footer > a > img {
   margin-right: 8px;
 }
 .placeholder-content {
-  position: fixed;
+  position: fixed;  
   bottom: 55px;
   left: 50%;
   transform: translateX(-50%);

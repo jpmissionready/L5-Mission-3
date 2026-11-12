@@ -156,12 +156,16 @@ export default function App() {
       {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
       {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
 
+
+
+
+
       <main>
         <div className="ai-interviewer">
           <h2>AI Mock Interviewer</h2>
           {/* Adding div for the Job Title + input bar so we can style it later */}
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="jobTitle">
               <label>Job Title: </label>
               <input
                 id="job-title"
@@ -187,7 +191,7 @@ export default function App() {
               <p>Interview finished. Click "Start again" to practise again.</p>
             )}
 
-            <div>
+            <div className="inputField">
               <textarea
                 rows={3}
                 cols={80}
@@ -203,6 +207,10 @@ export default function App() {
           </form>
         </div>
       </main>
+
+
+
+
 
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
