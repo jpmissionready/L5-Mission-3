@@ -39,7 +39,13 @@ export default function App() {
       { id: prev.length, sender: sender, text: text },
     ]);
   }
-
+  function startOver ()
+  {
+    setConversation([{ id: 0, sender: "Interviewer", text: "Tell me about yourself." },])
+    setMessage("");
+    setError("");
+    setFinished(false);
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     const answer = message.trim();
@@ -104,76 +110,29 @@ export default function App() {
       <navbar>
         {/* Same as turners */}
         <h4>
-          <a
-            href="https://www.turners.co.nz/?activetab=carsearch"
-            target="_blank"
-          >
-            Cars
-          </a>
-          <a
-            href="https://www.turners.co.nz/Trucks-Machinery/?"
-            target="_blank"
-          >
-            Trucks & Machinery
-          </a>
-          <a
-            href="https://www.turners.co.nz/Damaged-Vehicles/?"
-            target="_blank"
-          >
-            Damaged & End of Life
-          </a>
-          <a
-            href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1"
-            target="_blank"
-          >
-            Motorcycles
-          </a>
-          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank">
-            Buses, Caravans & Motorhomes
-          </a>
-          <a
-            href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1"
-            target="_blank"
-          >
-            Boats & Marine
-          </a>
+          <a href="https://www.turners.co.nz/?activetab=carsearch" target="_blank" > Cars </a>
+          <a href="https://www.turners.co.nz/Trucks-Machinery/?" target="_blank" > Trucks & Machinery </a>
+          <a href="https://www.turners.co.nz/Damaged-Vehicles/?" target="_blank" > Damaged & End of Life </a>
+          <a href="https://www.turners.co.nz/motorcycles-scooters/?sortorder=0&pagesize=20&pageno=1" target="_blank" > Motorcycles </a>
+          <a href="https://www.turners.co.nz/General-Goods/?" target="_blank"> Buses, Caravans & Motorhomes </a>
+          <a href="https://www.turners.co.nz/buses-caravans/?sortorder=7&pagesize=20&pageno=1" target="_blank" > Boats & Marine </a>
           <a href="#">AI Interviewer</a>
         </h4>
       </navbar>
       <header>
         <a href="#" target="_blank">
-          <img
-            src={turnersLogoHeader}
-            alt="Turners Logo"
-            className="headerLogo"
-          />
+          <img src={turnersLogoHeader} alt="Turners Logo" className="headerLogo" />
         </a>
-        <a
-          href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/"
-          target="_blank"
-        >
-          <img src={userIcon} alt="User Icon" className="HeaderIcons"></img>
-          LOGIN
-        </a>
+        <a href="https://www.turners.co.nz/Login/?ReturnUrl=/Cars/finance-insurance/car-insurance/" target="_blank" >
+          <img src={userIcon} alt="User Icon" className="HeaderIcons"></img> LOGIN </a>
         <span> OR </span>
-        <a href="https://www.turners.co.nz/Login/Registration/" target="_blank">
-          REGISTER
-        </a>
+        <a href="https://www.turners.co.nz/Login/Registration/" target="_blank"> REGISTER </a>
         <span className="phoneNumber">
           <img src={phoneIcon} alt="Phone Icon" className="HeaderIcons"></img>
           0800 887 637
         </span>
-        <a
-          className="findUs"
-          href="https://www.turners.co.nz/Company/Branches/"
-          target="_blank"
-        >
-          <img
-            src={locationIcon}
-            alt="Location Icon"
-            className="HeaderIcons"
-          ></img>
-          Find Us
+        <a className="findUs" href="https://www.turners.co.nz/Company/Branches/" target="_blank" >
+          <img src={locationIcon} alt="Location Icon" className="HeaderIcons" ></img> Find Us 
         </a>
       </header>
       <nav className="menubar">
@@ -197,12 +156,16 @@ export default function App() {
       {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
       {/* ^^^ ========================== ^^^ Not necessary for the mission ^^^ ========================== ^^^ */}
 
+
+
+
+
       <main>
         <div className="ai-interviewer">
           <h2>AI Mock Interviewer</h2>
           {/* Adding div for the Job Title + input bar so we can style it later */}
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="jobTitle">
               <label>Job Title: </label>
               <input
                 id="job-title"
@@ -228,7 +191,7 @@ export default function App() {
               <p>Interview finished. Click "Start again" to practise again.</p>
             )}
 
-            <div>
+            <div className="inputField">
               <textarea
                 rows={3}
                 cols={80}
@@ -238,13 +201,16 @@ export default function App() {
                 disabled={finished || loading}
                 required
               />
-              <button type="submit" disabled={finished || loading}>
-                Submit
-              </button>
+              <button type="submit" disabled={finished || loading}> Submit </button>
+              <button type="button" onClick={startOver} disabled={loading}> Start Again </button>
             </div>
           </form>
         </div>
       </main>
+
+
+
+
 
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
       {/* VVV ========================== VVV Not necessary for the mission VVV ========================== VVV */}
@@ -266,17 +232,11 @@ export default function App() {
           <img src={iconFacebook} alt="Facebook icon"></img>
           Facebook
         </a>
-        <a
-          href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/"
-          target="_blank"
-        >
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-newsletters/" target="_blank" >
           <img src={iconMail} alt="Newsletter icon"></img>
           Newsletter
         </a>
-        <a
-          href="https://www.turners.co.nz/Company/email-alerts/email-alerts/"
-          target="_blank"
-        >
+        <a href="https://www.turners.co.nz/Company/email-alerts/email-alerts/" target="_blank" >
           <img src={iconMail} alt="Email icon"></img>
           Email Alerts
         </a>
